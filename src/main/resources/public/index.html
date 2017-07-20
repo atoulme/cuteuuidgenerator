@@ -1,0 +1,26 @@
+<html>
+<head>
+
+    <script type="text/javascript">
+        function createUUID() {
+          var xhttp = new XMLHttpRequest();
+          xhttp.open("GET", "/rest/uuid", false);
+          xhttp.setRequestHeader("Content-type", "application/json");
+          xhttp.send();
+          var response = JSON.parse(xhttp.responseText);
+          document.getElementById("uuid").innerText = response.uuid;
+          document.getElementById("uuid").setAttribute("style", "background-color: #" + response.color);
+        }
+        window.onload = createUUID;
+    </script>
+</head>
+<body>
+
+<h2>Generate UUID</h2>
+
+<span id="uuid"></span>
+
+<button onclick="createUUID()">Regenerate</button>
+
+</body>
+</html>

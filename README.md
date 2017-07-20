@@ -1,4 +1,4 @@
-== Cute UUID Generator
+## Cute UUID Generator
 
 OK. Maybe not so cute.
 
@@ -6,7 +6,7 @@ The point of this tiny app is to learn Kotlin and see how much it'd take to crea
 
 This application uses Spring Boot.
 
-== License
+## License
 
 Copyright 2017 Antoine Toulme
 

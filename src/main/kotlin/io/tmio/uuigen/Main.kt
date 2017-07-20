@@ -16,11 +16,16 @@ class PublicApp {
 @RestController
 class RestAPI {
 
+    fun createColorElement(bits: Long) : String {
+        val hexString = java.lang.Long.toHexString(Math.abs(bits % 4096L));
+        return "000".substring(hexString.length) + hexString;
+    }
+
     @RequestMapping("/rest/uuid", method = arrayOf(GET))
     fun generateUUID() : Map<String, String> {
         val uuid = UUID.randomUUID()
-        val color = java.lang.Long.toHexString(Math.abs(uuid.mostSignificantBits % 4096L)) +
-                java.lang.Long.toHexString(Math.abs(uuid.leastSignificantBits % 4096L))
+        val color = createColorElement(uuid.mostSignificantBits) +
+                createColorElement(uuid.leastSignificantBits)
         return hashMapOf<String, String>("uuid" to uuid.toString(), "color" to color)
     }
 }

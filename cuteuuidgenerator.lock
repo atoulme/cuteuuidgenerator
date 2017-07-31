@@ -1,0 +1,81 @@
+---
+version: 0.15.2
+groups:
+  default:
+    dependencies:
+    - ch.qos.logback:logback-classic:jar:1.1.11
+    - ch.qos.logback:logback-core:jar:1.1.11
+    - com.fasterxml.jackson.core:jackson-annotations:jar:2.8.0
+    - com.fasterxml.jackson.core:jackson-core:jar:2.8.9
+    - com.fasterxml.jackson.core:jackson-databind:jar:2.8.9
+    - com.fasterxml:classmate:jar:1.3.1
+    - javax.validation:validation-api:jar:1.1.0.Final
+    - org.apache.tomcat.embed:tomcat-embed-core:jar:8.5.16
+    - org.apache.tomcat.embed:tomcat-embed-el:jar:8.5.16
+    - org.apache.tomcat.embed:tomcat-embed-websocket:jar:8.5.16
+    - org.hibernate:hibernate-validator:jar:5.3.5.Final
+    - org.jboss.logging:jboss-logging:jar:3.3.0.Final
+    - org.jetbrains.kotlin:kotlin-runtime:jar:1.1.3-2
+    - org.jetbrains.kotlin:kotlin-stdlib:jar:1.1.3-2
+    - org.jetbrains:annotations:jar:13.0
+    - org.slf4j:jcl-over-slf4j:jar:1.7.25
+    - org.slf4j:jul-to-slf4j:jar:1.7.25
+    - org.slf4j:log4j-over-slf4j:jar:1.7.25
+    - org.slf4j:slf4j-api:jar:1.7.22
+    - org.springframework.boot:spring-boot-autoconfigure:jar:1.5.5.RELEASE
+    - org.springframework.boot:spring-boot-loader:jar:1.5.5.RELEASE
+    - org.springframework.boot:spring-boot-starter-logging:jar:1.5.5.RELEASE
+    - org.springframework.boot:spring-boot-starter-tomcat:jar:1.5.5.RELEASE
+    - org.springframework.boot:spring-boot-starter-web:jar:1.5.5.RELEASE
+    - org.springframework.boot:spring-boot-starter:jar:1.5.5.RELEASE
+    - org.springframework.boot:spring-boot:jar:1.5.5.RELEASE
+    - org.springframework:spring-aop:jar:4.3.10.RELEASE
+    - org.springframework:spring-beans:jar:4.3.10.RELEASE
+    - org.springframework:spring-context:jar:4.3.10.RELEASE
+    - org.springframework:spring-core:jar:4.3.10.RELEASE
+    - org.springframework:spring-expression:jar:4.3.10.RELEASE
+    - org.springframework:spring-web:jar:4.3.10.RELEASE
+    - org.springframework:spring-webmvc:jar:4.3.10.RELEASE
+    - org.yaml:snakeyaml:jar:1.17
+    artifacts:
+    - jar:org.springframework.boot:spring-boot-starter-web:jar:1.5.5.RELEASE:
+        transitive:
+          org.springframework.boot:spring-boot-starter-tomcat:jar:1.5.5.RELEASE:
+            org.apache.tomcat.embed:tomcat-embed-core:jar:8.5.16: {}
+            org.apache.tomcat.embed:tomcat-embed-el:jar:8.5.16: {}
+            org.apache.tomcat.embed:tomcat-embed-websocket:jar:8.5.16: {}
+          org.hibernate:hibernate-validator:jar:5.3.5.Final:
+            com.fasterxml:classmate:jar:1.3.1: {}
+            org.jboss.logging:jboss-logging:jar:3.3.0.Final: {}
+            javax.validation:validation-api:jar:1.1.0.Final: {}
+          com.fasterxml.jackson.core:jackson-databind:jar:2.8.9:
+            com.fasterxml.jackson.core:jackson-annotations:jar:2.8.0: {}
+            com.fasterxml.jackson.core:jackson-core:jar:2.8.9: {}
+          org.springframework.boot:spring-boot-starter:jar:1.5.5.RELEASE:
+            org.springframework.boot:spring-boot:jar:1.5.5.RELEASE: {}
+            org.springframework:spring-core:jar:4.3.10.RELEASE: {}
+            org.springframework.boot:spring-boot-autoconfigure:jar:1.5.5.RELEASE: {}
+            org.yaml:snakeyaml:jar:1.17: {}
+            org.springframework.boot:spring-boot-starter-logging:jar:1.5.5.RELEASE:
+              org.slf4j:jul-to-slf4j:jar:1.7.25: {}
+              org.slf4j:log4j-over-slf4j:jar:1.7.25: {}
+              org.slf4j:jcl-over-slf4j:jar:1.7.25: {}
+              ch.qos.logback:logback-classic:jar:1.1.11:
+                ch.qos.logback:logback-core:jar:1.1.11: {}
+                org.slf4j:slf4j-api:jar:1.7.22: {}
+          org.springframework:spring-webmvc:jar:4.3.10.RELEASE:
+            org.springframework:spring-expression:jar:4.3.10.RELEASE: {}
+          org.springframework:spring-web:jar:4.3.10.RELEASE:
+            org.springframework:spring-beans:jar:4.3.10.RELEASE: {}
+            org.springframework:spring-context:jar:4.3.10.RELEASE: {}
+            org.springframework:spring-aop:jar:4.3.10.RELEASE: {}
+    - jar:org.springframework.boot:spring-boot-loader:jar:1.5.5.RELEASE:
+        transitive: {}
+    - jar:org.jetbrains.kotlin:kotlin-runtime:jar:1.1.3-2:
+        transitive:
+          org.jetbrains:annotations:jar:13.0: {}
+    - jar:org.jetbrains.kotlin:kotlin-stdlib:jar:1.1.3-2:
+        transitive: {}
+remote_repositories:
+- http://repo1.maven.org/maven2/
+- http://repo.maven.apache.org/maven2/
